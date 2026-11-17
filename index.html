@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ロケハンメモ</title>
+<style>
+:root{--bg:#f2f4f7;--card:#fff;--tx:#1c1f24;--sub:#5d6573;--bd:#cfd5de;--ac:#1f6feb;--acx:#fff;--wr:#c62828;--wb:#fdecea;--rd:10px;--gap:14px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15181d;--card:#1f2329;--tx:#e8eaed;--sub:#9aa3b0;--bd:#3a424d;--ac:#5b9bff;--acx:#0b1220;--wr:#ff8a80;--wb:#3a1f1f}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 -apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;overflow-wrap:anywhere}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--bd);padding:10px 14px}
+.hr{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
+h1{font-size:19px;line-height:1.3;margin:0}#st{font-size:13px;color:var(--sub)}
+.bt{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.bt>button{flex:1 1 auto;min-width:0}
+button{font:inherit;font-size:15px;font-weight:600;min-height:44px;padding:0 16px;border-radius:var(--rd);border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;max-width:100%}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+button.p{background:var(--ac);color:var(--acx);border-color:var(--ac)}button.d{color:var(--wr);border-color:var(--wr)}
+main{width:100%;max-width:860px;margin:0 auto;padding:12px 12px 4px}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;margin:0 0 14px;min-width:0}
+summary{font-size:17px;font-weight:700;padding:12px 16px;cursor:pointer;min-height:48px;display:flex;align-items:center}
+.in{padding:4px 16px 16px;min-width:0}
+details.w{border-color:var(--wr);background:var(--wb)}details.w summary{color:var(--wr)}
+.g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px var(--gap)}
+.g>.f{margin:0;min-width:0}.g>.f.full{grid-column:1/-1}
+.f{margin:0 0 12px;min-width:0}
+label{display:block;font-size:13px;font-weight:600;color:var(--sub);margin:0 0 4px}
+input,select,textarea{display:block;width:100%;min-width:0;max-width:100%;font:inherit;font-size:16px;line-height:1.4;min-height:44px;padding:9px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 30%,transparent)}
+textarea{min-height:80px;resize:vertical}
+input[type=date],input[type=time]{-webkit-appearance:none;appearance:none}
+.r{display:flex;gap:8px;min-width:0}.r>select{flex:0 0 112px;width:112px}.r>input{flex:1 1 0;min-width:0}
+.ca{border:1px solid var(--bd);border-radius:var(--rd);padding:6px 12px 12px;margin:0 0 14px;min-width:0}.ca h3{font-size:15px;margin:6px 0 8px}
+.ca .f:last-of-type{margin-bottom:12px}
+.tw{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--bd);border-radius:8px;margin-bottom:12px}
+table{border-collapse:collapse;width:max-content;min-width:100%}th{font-size:12px;color:var(--sub);text-align:left;padding:6px 6px 2px;white-space:nowrap}
+td{padding:4px 6px;vertical-align:middle}td input{min-width:110px;min-height:40px;font-size:15px}td:first-child{padding-left:10px}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:8px 0;margin:0;font-size:16px;font-weight:400;color:var(--tx)}
+.ck input{width:24px;height:24px;min-height:0;min-width:24px;flex:none;margin:3px 0 0;padding:0}
+.td{display:flex;gap:8px;align-items:center;margin:0 0 8px;min-width:0}.td input[type=checkbox]{width:24px;min-width:24px;height:24px;min-height:0;flex:none;padding:0}
+.td input:not([type=checkbox]){flex:1 1 0}.td button{flex:none}
+progress{display:block;width:100%;height:10px;margin:4px 0 8px}
+footer{text-align:center;font-size:13px;color:var(--sub);padding:12px 16px 32px;max-width:860px;margin:0 auto}
+dialog{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);width:min(92vw,720px);padding:16px}
+dialog::backdrop{background:#0008}#ot{min-height:50vh;font-size:14px;font-family:ui-monospace,monospace}
+@media(max-width:600px){.g{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){main{padding:10px 10px 0}.in{padding:2px 12px 14px}summary{padding:10px 12px}.r{flex-direction:column}.r>select{flex:none;width:100%}.bt>button{flex:1 1 calc(50% - 8px)}.td{flex-wrap:wrap}.td input:not([type=checkbox]){flex:1 1 calc(100% - 40px)}.td button{margin-left:32px}}
+</style></head><body>
+<header><div class="hr"><h1>📍 ロケハンメモ</h1><span id="st">未保存</span></div>
+<div class="bt"><button class="p" id="bTxt">テキスト出力</button><button id="bCsv">CSV出力</button><button class="d" id="bRst">全てリセット</button></div></header>
+<main id="app"></main>
+<footer>ログイン・サーバー不要。入力内容はこの端末のブラウザ内（localStorage）にだけ保存され、外部には送信されません。ブラウザのデータを消去すると失われるため、大切なメモはテキスト／CSVで保存してください。<br><a href="manual.html">使い方（説明書）を開く</a></footer>
+<dialog id="dOut"><h2 style="margin:0 0 8px;font-size:17px">テキスト出力</h2><textarea id="ot" readonly></textarea>
+<div class="bt"><button class="p" id="bCp">テキストをコピー</button><button id="bDl">.txtでダウンロード</button><button id="bCl">閉じる</button></div><div id="msg" style="font-size:13px;color:var(--sub);min-height:20px"></div></dialog>
+<dialog id="dRst"><p>全ての入力内容を消去して空の状態に戻します。元に戻せません。よろしいですか？</p><div class="bt"><button class="d" id="rOk">リセットする</button><button id="rNo">キャンセル</button></div></dialog>
+<script>
+const TF=['','有','無','未確認'],PF=['','可','不可','要確認'];
+const S=[
+{t:'1. 結論・総合判定',f:[['verdict','総合判定','s',['','本番可','条件付き可','要再訪','不可']],['suit','向いている撮影（複数可）','i'],['time','おすすめの時間帯','i'],['season','おすすめの季節・時期','i'],['one','一言メモ','a']]},
+{t:'2. 基本情報',f:[['place','場所名','i'],['date','ロケハン日','d'],['arr','到着時刻','m'],['leave','離脱時刻','m'],['addr','住所','i'],['area','市町村・エリア','i'],['gmap','GoogleマップURL','u'],['io','室内・室外','s',['','室内','室外','両方']],['cat','カテゴリ','s',['','公園・庭園','海・海岸','川・滝','山・高原','神社・寺院','洋館・歴史的建造物','街なか・商店街','公共施設','レンタルスペース・スタジオ','ホテル・婚礼施設','その他']],['purpose','想定する撮影（目的）','i'],['site','公式サイトURL','u'],['contact','問合せ先','i'],['hours','利用・営業時間','i'],['closed','休館・休園日','i'],['fee','入場料・利用料','i'],['wx','当日の天気・気温','i'],['sun','日の出・日没','i']]},
+{t:'3. アクセス・駐車場',f:[['pk','駐車場','s',['','有','無','要確認']],['pkn','駐車台数','i'],['pkf','駐車料金','i'],['pkp','駐車場の場所・入口','a'],['pkr','満車リスク・混雑','a'],['pka','代替の駐車場','a'],['car','車でのアクセス（道の狭さなど）','a'],['stn','最寄駅・バス停','i'],['lug','荷物の運搬','a']]},
+{t:'4. 施設・設備',f:['トイレ','更衣・着替え場所','休憩・待機場所','雨宿りできる場所','電源・コンセント','水道','自動販売機・売店','近隣のコンビニ・飲食店','ゴミ箱','携帯の電波・Wi-Fi','姿見鏡','空調','室内の照明'].map((l,i)=>['fc'+i,l,'y'])},
+{t:'5. 撮影許可・ルール',f:[['pm','撮影許可','s',['','不要','申請要','要確認']],['pmc','申請先・連絡先','i'],['pmd','申込期限','i'],...['商用利用','コスプレ撮影','三脚・一脚','レフ板・スタンド','ストロボ・LED照明','ドローン'].map((l,i)=>['pr'+i,l,'p']),['ng','立入禁止・撮影禁止エリア','a'],['neigh','近隣への配慮','a'],['rule','その他のルール','a']]},
+{t:'6. 光のメモ',f:[['l1','太陽の向き','a'],['l2','日差しが入る時間帯','a'],['l3','日陰のでき方','a'],['l4','順光になる時間帯','a'],['l5','逆光になる時間帯','a'],['l6','夕景・夜景','a'],['l7','室内の光','a']]},
+{t:'7. スポット別メモ',k:'spots'},{t:'8. 撮影設定メモ（テスト撮影）',k:'tests'},
+{t:'9. 写真メモ（文字のみ）',f:[['p1','全景・入口','a'],['p2','設備','a'],['p3','スポット別・テスト撮影','a'],['p4','看板・注意書き','a']]},
+{t:'10. 動画メモ',f:[['vu','動画リンクURL','u'],['vm','内容メモ','a']]},
+{t:'11. 音・環境',f:[['e1','周囲の騒音','a'],['e2','風','a'],['e3','虫・生き物','a'],['e4','危険な場所','a'],['e5','混雑する曜日・時間帯','a']]},
+{t:'12. 本番当日に向けたメモ',f:[['h1','おすすめの集合場所','a'],['h2','動線','a'],['h3','雨天の場合','a'],['h4','昼食・補給の候補','a'],['h5','持っていくべき機材・備品','a']]},
+{t:'13. 注意事項',w:1,f:[['caution','注意事項（危険・マナー・要注意点など）','a']]},
+{t:'14. 要確認・次回見ること',k:'todos'},
+{t:'15. 振り返り',f:[['g1','良かった点','a'],['g2','気になった点','a'],['g3','次回撮りたいもの','a']]},
+{t:'16. 現地チェックリスト',k:'chk'}];
+const SP=[['name','スポット名'],['bg','背景・抜け'],['gr','地面・足場'],['sz','広さ'],['fl','人の流れ・混雑'],['rf','映り込み'],['cut','おすすめカット']];
+const TC=[['time','時刻','time'],['spot','スポット'],['cam','カメラ・レンズ'],['fl','焦点距離'],['ap','絞り'],['ss','シャッター速度'],['iso','ISO'],['wb','WB'],['fx','ストロボ・照明'],['note','結果・メモ']];
+const CK=['入口・全景・駐車場・トイレの写真を撮った','室内か室外か、雨の日にどうなるかを見た','撮影許可・三脚・ストロボ・更衣のルールを確認した','太陽の向きと、日差し・日陰の入り方を見た','テスト撮影を1カット以上して、設定を控えた','人の流れ・混雑・周囲の音を見た','本番の集合場所・動線の候補を決めた'];
+const KEY='rokehan_memo_v1',$=s=>document.querySelector(s);
+const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const blank=()=>({v:{},spots:[],tests:[],todos:[],chk:[],open:{}});
+let st=blank();try{const j=JSON.parse(localStorage.getItem(KEY));if(j&&typeof j==='object')st=Object.assign(blank(),j)}catch(e){}
+function saved(){const d=new Date();$('#st').textContent='保存済み '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));saved()}catch(e){$('#st').textContent='⚠ 保存できません'}}
+const sel=(k,o,v,x='')=>`<select data-k="${k}" ${x}>${o.map(a=>`<option value="${E(a)}"${a===v?' selected':''}>${a||'選択'}</option>`).join('')}</select>`;
+function fld([k,l,t,o]){const v=st.v[k]||'';let h;
+if(t==='y'||t==='p')h=`<div class="r">${sel(k+'_s',t==='y'?TF:PF,st.v[k+'_s']||'')}<input data-k="${k}_m" value="${E(st.v[k+'_m']||'')}" placeholder="メモ"></div>`;
+else if(t==='s')h=sel(k,o,v);else if(t==='a')h=`<textarea data-k="${k}">${E(v)}</textarea>`;
+else h=`<input data-k="${k}" type="${{d:'date',m:'time',u:'url'}[t]||'text'}" value="${E(v)}">`;
+return `<div class="f${(t==='a'||t==='y'||t==='p')?' full':''}"><label>${l}</label>${h}</div>`}
+function body(s){
+if(s.k==='spots')return st.spots.map((o,i)=>`<div class="ca"><h3>スポット${i+1}</h3>${SP.map(([k,l])=>`<div class="f"><label>${l}</label>${k==='name'?`<input data-r="spots" data-i="${i}" data-k="${k}" value="${E(o[k]||'')}">`:`<textarea data-r="spots" data-i="${i}" data-k="${k}">${E(o[k]||'')}</textarea>`}</div>`).join('')}<button class="d" data-del="spots" data-i="${i}">このスポットを削除</button></div>`).join('')+`<button class="p" data-add="spots">＋ スポットを追加</button>`;
+if(s.k==='tests')return `<div class="tw"><table><tr><th>#</th>${TC.map(c=>`<th>${c[1]}</th>`).join('')}<th></th></tr>${st.tests.map((o,i)=>`<tr><td>${i+1}</td>${TC.map(([k,l,t])=>`<td><input type="${t||'text'}" aria-label="${l}" data-r="tests" data-i="${i}" data-k="${k}" value="${E(o[k]||'')}"></td>`).join('')}<td><button class="d" data-del="tests" data-i="${i}">削除</button></td></tr>`).join('')}</table></div><p><button class="p" data-add="tests">＋ 行を追加</button></p>`;
+if(s.k==='todos')return st.todos.map((o,i)=>`<div class="td"><input type="checkbox" data-r="todos" data-i="${i}" data-k="d" ${o.d?'checked':''}><input data-r="todos" data-i="${i}" data-k="t" value="${E(o.t||'')}" placeholder="確認すること"><button class="d" data-del="todos" data-i="${i}">削除</button></div>`).join('')+`<button class="p" data-add="todos">＋ ToDoを追加</button>`;
+if(s.k==='chk'){const n=CK.filter((c,i)=>st.chk[i]).length;return `<div id="pg"><b>${n} / ${CK.length}</b> 完了<progress max="${CK.length}" value="${n}"></progress></div>`+CK.map((c,i)=>`<label class="ck" style="font-size:16px;color:var(--tx)"><input type="checkbox" data-c="${i}" ${st.chk[i]?'checked':''}><span>${c}</span></label>`).join('')}
+return `<div class="g">${s.f.map(fld).join('')}</div>`}
+function render(){$('#app').innerHTML=S.map((s,n)=>`<details data-n="${n}" class="${s.w?'w':''}" ${st.open[n]===false?'':'open'}><summary>${s.t}</summary><div class="in">${body(s)}</div></details>`).join('')}
+$('#app').addEventListener('toggle',e=>{const n=e.target.dataset?.n;if(n!=null){st.open[n]=e.target.open;save()}},true);
+function onIn(e){const t=e.target,v=t.type==='checkbox'?t.checked:t.value;
+if(t.dataset.c!=null){st.chk[+t.dataset.c]=v;const n=CK.filter((c,i)=>st.chk[i]).length;$('#pg').innerHTML=`<b>${n} / ${CK.length}</b> 完了<progress max="${CK.length}" value="${n}"></progress>`}
+else if(t.dataset.r)st[t.dataset.r][+t.dataset.i][t.dataset.k]=v;else if(t.dataset.k)st.v[t.dataset.k]=v;else return;save()}
+$('#app').addEventListener('input',onIn);$('#app').addEventListener('change',onIn);
+$('#app').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+if(b.dataset.add){st[b.dataset.add].push({});save();render()}
+else if(b.dataset.del){st[b.dataset.del].splice(+b.dataset.i,1);save();render()}});
+function entries(){const out=[];S.forEach(s=>{const r=[];
+if(s.k==='spots')st.spots.forEach((o,i)=>SP.forEach(([k,l])=>o[k]&&r.push([`スポット${i+1}・${l}`,o[k]])));
+else if(s.k==='tests')st.tests.forEach((o,i)=>TC.forEach(([k,l])=>o[k]&&r.push([`撮影設定${i+1}・${l}`,o[k]])));
+else if(s.k==='todos')st.todos.forEach((o,i)=>o.t&&r.push([`ToDo${i+1}`,(o.d?'[済] ':'[未] ')+o.t]));
+else if(s.k==='chk')CK.forEach((c,i)=>r.push([`チェック${i+1}`,(st.chk[i]?'[済] ':'[未] ')+c]));
+else s.f.forEach(([k,l,t])=>{const val=(t==='y'||t==='p')?[st.v[k+'_s'],st.v[k+'_m']].filter(Boolean).join('：'):st.v[k];val&&r.push([l,val])});
+if(r.length)out.push([s.t.replace(/^\d+\.\s*/,''),r])});return out}
+const toTxt=()=>'ロケハンメモ\n\n'+entries().map(([t,r])=>`■${t}\n`+r.map(([l,v])=>`${l}：${String(v).replace(/\n/g,'\n　')}`).join('\n')).join('\n\n')+'\n';
+const cq=s=>/[",\r\n]/.test(s)?'"'+String(s).replace(/"/g,'""')+'"':s;
+const toCsv=()=>'\ufeff'+[['項目名','内容'],...entries().flatMap(([t,r])=>[['■'+t,''],...r])].map(r=>r.map(cq).join(',')).join('\r\n')+'\r\n';
+const fname=ext=>{const p=(st.v.place||'').trim().replace(/[\\/:*?"<>|\s]+/g,'_'),d=st.v.date||'';return p?`ロケハン_${p}${d?'_'+d:''}.${ext}`:`ロケハンメモ.${ext}`};
+async function dl(name,text,type){const b=new Blob([text],{type});let ok=false;
+try{const d=await claude.use('downloads');if(d){await d.save({filename:name,data:b});ok=true}}catch(e){if(e&&e.code==='declined')return}
+if(!ok){const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove()}}
+$('#bTxt').onclick=()=>{$('#ot').value=toTxt();$('#msg').textContent='';$('#dOut').showModal()};
+$('#bCl').onclick=()=>$('#dOut').close();
+$('#bCp').onclick=async()=>{const t=$('#ot').value;try{await navigator.clipboard.writeText(t)}catch(e){$('#ot').select();document.execCommand('copy')}$('#msg').textContent='コピーしました'};
+$('#bDl').onclick=()=>dl(fname('txt'),toTxt(),'text/plain;charset=utf-8');
+$('#bCsv').onclick=()=>dl(fname('csv'),toCsv(),'text/csv;charset=utf-8');
+$('#bRst').onclick=()=>$('#dRst').showModal();$('#rNo').onclick=()=>$('#dRst').close();
+$('#rOk').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}st=blank();render();$('#dRst').close();$('#st').textContent='リセットしました'};
+render();if(localStorage.getItem(KEY))saved();
+</script></body></html>

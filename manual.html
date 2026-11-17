@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ロケハンメモ 使い方</title>
+<style>
+body{font:16px/1.8 -apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;margin:0;background:#f6f4ef;color:#222}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:24px;margin:8px 0 4px}
+h2{font-size:19px;margin:28px 0 6px;border-left:5px solid #d97706;padding-left:8px}
+p,li{font-size:15px}
+.card{background:#fff;border:1px solid #ddd6c8;border-radius:10px;padding:12px 16px;margin:12px 0}
+.warn{background:#fff7e6;border-color:#e5c07b}
+a.btn{display:inline-block;background:#d97706;color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:8px;margin:8px 0}
+small{color:#666}
+ol,ul{padding-left:22px}
+</style>
+</head>
+<body>
+<main>
+<h1>📍 ロケハンメモ 使い方</h1>
+<p>写真・動画撮影のロケハン（撮影前の下見）で見たことを、その場で記録するためのメモアプリの説明書です。ログイン不要・無料で、フォトグラファーの方ならどなたでも使えます。</p>
+<p><a class="btn" href="index.html">アプリを開く</a></p>
+
+<h2>基本の流れ</h2>
+<ol>
+<li>アプリをスマホのブラウザで開く</li>
+<li>現地で各セクションを開いて入力する（入力のたびに自動保存されます）</li>
+<li>最後に「結論・総合判定」を付ける</li>
+<li>「テキスト出力」または「CSV出力」でメモを書き出して保存・共有する</li>
+<li>次のロケハンに行く前に「全てリセット」で空に戻す</li>
+</ol>
+
+<div class="card warn">
+<h2 style="border:none;padding:0;margin-top:4px">保存についての大事な注意</h2>
+<ul>
+<li>入力内容は<strong>お使いの端末のブラウザ内（localStorage）にだけ</strong>保存されます。外部のサーバーには送信されません</li>
+<li>保存されるのは<strong>1件分だけ</strong>です。別の場所のメモを始める前に、必ずテキスト／CSVで書き出してからリセットしてください</li>
+<li>端末やブラウザが変わると内容は引き継がれません。ブラウザのデータを消去したり、プライベートブラウズで使ったりすると消えます</li>
+<li>大切なメモは、ロケハンが終わったらその日のうちに書き出しておくのがおすすめです</li>
+</ul>
+</div>
+
+<h2>画面のボタン</h2>
+<ul>
+<li><strong>テキスト出力</strong>：見出し付きテキストのプレビュー、コピー、.txtダウンロード（ファイル名は「ロケハン_場所名_ロケハン日.txt」）</li>
+<li><strong>CSV出力</strong>：項目名と内容の2列。UTF-8（BOM付き）でExcel対応</li>
+<li><strong>全てリセット</strong>：入力を全て消します（確認あり）。書き出し忘れに注意してください</li>
+</ul>
+
+<h2>入力セクション（全16）</h2>
+<ol>
+<li>結論・総合判定（本番可／条件付き可／要再訪／不可など）</li>
+<li>基本情報（場所名、日付、住所、マップURL、室内・室外、料金、天気、日の出・日没など）</li>
+<li>アクセス・駐車場（台数・料金・満車リスク、代替駐車場など）</li>
+<li>施設・設備（トイレ、更衣、電源、水道、電波などを有／無／未確認＋メモで）</li>
+<li>撮影許可・ルール（許可・申請、商用利用、三脚・ストロボ・ドローンの可否など）</li>
+<li>光のメモ（太陽の向き、順光・逆光の時間帯、夕景・夜景など）</li>
+<li>スポット別メモ（何件でも追加できます）</li>
+<li>撮影設定メモ（テスト撮影の設定を表で記録）</li>
+<li>写真メモ（写真についての文字メモ）</li>
+<li>動画メモ（動画のリンクURLと内容メモ）</li>
+<li>音・環境（騒音、風、虫、危険な場所、混雑など）</li>
+<li>本番当日に向けたメモ（集合場所、動線、雨天時、機材など）</li>
+<li>注意事項</li>
+<li>要確認・次回見ること（チェック付きToDo）</li>
+<li>振り返り（良かった点、気になった点、次回撮りたいもの）</li>
+<li>現地チェックリスト（最低限見るべき7項目）</li>
+</ol>
+<p>分からない項目は、推測で埋めず空欄のままにして「要確認・次回見ること」に入れておくのがおすすめです。</p>
+
+<h2>よくある質問</h2>
+<div class="card">
+<p><strong>入力した内容が他人に見られることはありますか？</strong><br>ありません。内容は自分の端末のブラウザ内にだけ保存され、どこにも送信されません。ただし端末自体を共有している場合は、その端末でアプリを開いた人に見えるので注意してください。</p>
+<p><strong>写真を添付できますか？</strong><br>できません。写真は手元のカメラ・スマホで撮り、このアプリには文字メモだけを残す設計です。</p>
+<p><strong>複数の場所を同時に保存できますか？</strong><br>アプリ内では1件分だけです。場所ごとにテキスト／CSVで書き出して管理してください。</p>
+<p><strong>オフラインで使えますか？</strong><br>一度開いた後は、電波の弱い場所でも入力できます（保存も端末内です）。</p>
+</div>
+
+<p><a class="btn" href="index.html">アプリを開く</a></p>
+<p><small>ロケハンメモ説明書（2026-11-17版）／ アプリ本体: index.html ／ 詳細はGitHubリポジトリのREADMEにも同じ内容があります</small></p>
+</main>
+</body>
+</html>
